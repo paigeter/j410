@@ -139,7 +139,7 @@ function topFunction() {
         </li>
         <li>
           <a href="#vid">Music Network</a>
-			</li>
+        </li>
       <li>
           <a href="#num">SLO Beats</a>
 			</li>
@@ -167,7 +167,7 @@ function topFunction() {
 <h2 id="home">Slocal Music</h2>
 <article>
 <p class="tab">San Luis Obispo (SLO) is known for being a college town with more than half of its residents being college students. A big part of the culture in SLO is the music scene, which comprises a lot of local bands and artists.<br><br>Explore the diverse music scene that makes up SLO and the community that is built around it, bringing people together through the power of music.</p>
-<p class="tab"><a href="#gal">Navigation</a></p>
+<p class="tab"><a href="#gal">Artist Spotlight</a></p>
 </article>
 </div>
 
@@ -200,7 +200,7 @@ data-cycle-speed="200">
 <!--beginning of slideshow caption-->
 <div id="alt-caption" class="center">
 </div><!--end of slideshow caption-->
-<p class="tab"><a href="#tl">Navigation</a></p>
+<p class="tab"><a href="#tl">Local Experiences</a></p>
 </article><!--end of article-->
 </div><!--end of row-->
 <!--end of slideshow section-->
@@ -231,15 +231,14 @@ data-cycle-speed="200">
             
 <img src="img/rollover/3.JPG" class="image2" alt="description" onMouseOver="this.src='img/rollover/3.gif'" onMouseOut="this.src='img/rollover/3.JPG'" onClick="document.getElementById('audio_3').play(); return false;" onDblClick="document.getElementById('audio_3').pause(); return false;">
 /&gt;
+    <article>
+    <p class="tab"><a href="#vid">Music Network</a></p>        
+    </article>
 </div>
 </div>
 </article>
 </div>
     
-<article>
-<p class="tab"><a href="#vid">Navigation</a></p>		
-</article>
-</div>
 <!--end of audio section-->
     
 <!--beginning of parallax image-->
@@ -259,7 +258,7 @@ data-cycle-speed="200">
 <source src="img/video.mp4" type="video/mp4">
 Your browser does not support the video tag.
 </video>
-<p class="tab"><a href="#num">Navigation</a></p>
+<p class="tab"><a href="#num">SLO Beats</a></p>
 </article>
 </div>
 <!--end of video section-->
@@ -276,7 +275,7 @@ Your browser does not support the video tag.
 <!--end of infographic section-->
 	
 <!--beginning of footer-->
-<footer>Slocal Music | San Luis Obispo, CA | <a href="mailto: email@email.com?Subject=Inquiry" target="_top">Send Email</a> | Copyright 2024 | Site by Paige Teraji 
+<footer>Slocal Music | San Luis Obispo, CA | <a href="mailto: pteraji@calpoly.edu?Subject=Inquiry" target="_top">Send Email</a> | Copyright 2024 | Site by Paige Teraji 
 </footer>
 <!--end of footer-->
     
@@ -341,5 +340,14 @@ document.addEventListener('play', function(e){
     document.getElementById('olivia-link').addEventListener('click', function() {
         window.open('https://www.instagram.com/olivia.nieporte/', '_blank');
     });
+    
+<!-- Script to handle smooth scrolling -->
+<script>
+    document.querySelector('.tab a[href="#vid"]').addEventListener('click', function(e) {
+        e.preventDefault();
+        document.getElementById('vid').scrollIntoView({ behavior: 'smooth' });
+    });
+</script>
+    
 </script>
 </html>

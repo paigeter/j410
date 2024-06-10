@@ -1,0 +1,345 @@
+<!doctype html>
+
+<html>
+	
+<head>
+	
+<!--The following displays language used in browser to interpret page -->
+<meta charset="UTF-8">
+
+<!--The following line of code displays the page title on a browser tab -->
+<title>Slocal Music | Home</title>
+
+<!--link tags are for linking to external files, in this case your CSS stylesheet-->
+<link href="style.css" rel="stylesheet" type="text/css">
+	
+<!--link tags are for linking to external files, in this case a special CSS stylesheet-->
+<link href="normalize.css" rel="stylesheet" type="text/css">
+
+<!--the following tag tells the browser to adjust the site according to screen size-->
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<!--The following code links to the jquery library -->
+<script type="text/javascript" src="js/jquery-2.1.1.min.js"></script>
+
+<!--The following code links to the javascript file that runs the slideshow -->	
+<script type="text/javascript" src="js/jquery.cycle2.min.js"></script>
+    
+<!--The following code links to the javascript file that runs the parallax image -->    
+<script src="js/parallax.min.js"></script>
+	
+<!--The following code links to Google Fonts-->
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&display=swap" rel="stylesheet">
+    
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
+    
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
+	
+<!--The following javscript runs the jquery slideshow -->
+<script type="text/javascript">
+$('#slider').cycle({});
+</script>
+
+<!--The following javascript runs the nav bar which disappears on scroll-->
+<script type="text/javascript">
+// Hide Header on on scroll down
+var didScroll;
+var lastScrollTop = 0;
+var delta = 5;
+var navbarHeight = $('header').outerHeight();
+
+$(window).scroll(function(event){
+    didScroll = true;
+});
+
+setInterval(function() {
+    if (didScroll) {
+        hasScrolled();
+        didScroll = false;
+    }
+}, 250);
+
+function hasScrolled() {
+    var st = $(this).scrollTop();
+    
+    // Make sure they scroll more than delta
+    if(Math.abs(lastScrollTop - st) <= delta)
+        return;
+    
+    // If they scrolled down and are past the navbar, add class .nav-up.
+    // This is necessary so you never see what is "behind" the navbar.
+    if (st > lastScrollTop && st > navbarHeight){
+        // Scroll Down
+        $('header').removeClass('nav-down').addClass('nav-up');
+    } else {
+        // Scroll Up
+        if(st + $(window).height() < $(document).height()) {
+            $('header').removeClass('nav-up').addClass('nav-down');
+        }
+    }
+    
+    lastScrollTop = st;
+}
+</script>
+    
+<!--Favicon - images are in a folder called 'fav'-->
+<link rel="apple-touch-icon" sizes="180x180" href="img/fav/apple-touch-icon.png">
+<link rel="icon" type="image/png" sizes="32x32" href="img/fav/favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="img/fav/favicon-16x16.png">
+<link rel="manifest" href="img/fav/site.webmanifest">
+<link rel="mask-icon" href="img/fav/safari-pinned-tab.svg" color="#5bbad5">
+<meta name="msapplication-TileColor" content="#da532c">
+<meta name="theme-color" content="#ffffff">
+<!--End Favicon-->
+    
+<!--back to top button-->
+<button onclick="topFunction()" id="myBtn" title="Go to top">Top</button>
+<script>
+window.onscroll = function() {scrollFunction()};
+
+function scrollFunction() {
+  if (document.body.scrollTop > 30 || document.documentElement.scrollTop > 30) {
+    document.getElementById("myBtn").style.display = "block";
+  } else {
+    document.getElementById("myBtn").style.display = "none";
+  }
+}
+
+// When the user clicks on the button, scroll to the top of the document
+function topFunction() {
+  document.body.scrollTop = 0; // For Safari
+  document.documentElement.scrollTop = 0; // For Chrome, Firefox, IE and Opera
+}    
+</script>   
+</head>
+
+<body>
+
+<!--beginning of navigation section-->
+<header>
+<div class="nav-container">
+<div class="brand"><img src="img/logo.png" width="81.25" height="75" alt=""/></div>
+<nav>
+<div class="nav-mobile"><a id="nav-toggle" href="#!"><span></span></a></div>
+  <ul class="nav-list">
+        <li>
+          <a href="#home">Home</a>
+        </li>
+	   <li>
+          <a href="#gal">Artist Spotlight</a>
+		  </li>
+	  	<li>
+          <a href="#tl">Local Experiences</a>
+        </li>
+        <li>
+          <a href="#vid">Music Network</a>
+			</li>
+      <li>
+          <a href="#num">SLO Beats</a>
+			</li>
+      </ul>
+</nav>
+</div>
+<!--closing navigation tag-->
+</header>
+<!--end of navigation section-->
+    
+<!--main image-->
+<div class="container">
+  <div class="courtesy">
+    Photo: Aidan Dillon
+  </div>
+</div>
+    
+<!--animated welcome-->
+<div class="wrapper">
+<!--animated welcome code here-->	
+</div>
+    
+<!--beginning of main content area-->
+<div class="row whiteBG">
+<h2 id="home">Slocal Music</h2>
+<article>
+<p class="tab">San Luis Obispo (SLO) is known for being a college town with more than half of its residents being college students. A big part of the culture in SLO is the music scene, which comprises a lot of local bands and artists.<br><br>Explore the diverse music scene that makes up SLO and the community that is built around it, bringing people together through the power of music.</p>
+<p class="tab"><a href="#gal">Navigation</a></p>
+</article>
+</div>
+
+<!--beginning of slideshow section-->
+<div class="row blueBG"><!--beginning of row-->
+<h2 id="gal">New Voices: Olivia Nieporte’s Debut Single</h2>
+<article><!--beginning of article-->
+<p class="tab">The music scene of San Luis Obispo is always evolving, with fresh talent and voices bringing in unique perspective and sounds. Discover the story of <span id="olivia-link">Olivia Nieporte</span>, a second-year Cal Poly student, as she releases her debut song "raincoat."</p>
+<!--beginning of slideshow-->
+<div id="slider"
+data-cycle-caption="#alt-caption"
+data-cycle-caption-template="{{alt}}"
+data-cycle-fx="scrollHorz"
+data-cycle-pause-on-hover="true"
+data-cycle-speed="200">
+<div class="cycle-prev"></div>
+<div class="cycle-next"></div>
+<img src="img/1.jpg" width="100%" height="100%" alt="San Luis Obispo | April 24, 2024 || Cal Poly second-year journalism student, Olivia Nieporte, released her debut song “raincoat” on March 8, 2024."/>
+<img src="img/2.jpg" width="100%" height="100%" alt="Nieporte wrote “raincoat” when she was sixteen years old, but didn’t meet the song’s producer Matt Purkiss until a year later."/>
+<img src="img/3.jpg" width="100%" height="100%" alt="“Olivia is just a joy to work with. She brings so much enthusiasm to everything she does,” Purkiss says. “I learned a lot about myself and about what my strengths and weaknesses were, as well, so I appreciate her for helping bring that out of me.”"/>
+<img src="img/4.jpg" width="100%" height="100%" alt="Nieporte wrote the lyrics for “raincoat” in 20 minutes, but producing the song was a six-month-long process. She says she enjoyed having someone else bring in their creative elements to work in combination with her own."/>
+<img src="img/5.jpg" width="100%" height="100%" alt="“Writing songs isn’t like this process for me where it’s the same every time. Sometimes it’s really fun. Sometimes I hate it,” Nieporte says. “I found that when I force it, I don’t make genuine art.”"/>
+<img src="img/6.jpg" width="100%" height="100%" alt="Nieporte posted a promotion for her debut song on her Instagram (@olivia.nieporte) and received support and positive feedback in the comments."/>
+<img src="img/7.jpg" width="100%" height="100%" alt="Nieporte says the community built around the music scene in San Luis Obispo is very welcoming. She is involved in MPU and the Rec Hub, two local organizations built around music and supporting artists in the community."/>
+<img src="img/8.jpg" width="100%" height="100%" alt="She says she is trying to find the balance between wanting to do music because of her love for it and trying to further her career within the music industry."/>
+<img src="img/9.jpg" width="100%" height="100%" alt="“I just feel like I make less emotional songs or less authentic music when I’m focusing on my career aspect of it,” Nieporte says."/>
+<img src="img/10.jpg" width="100%" height="100%" alt="At the moment, she’s working on putting herself out there more and giving live performances. Nieporte says she is excited to reach out to and work with other musicians and producers in the area."/>
+<img src="img/11.jpg" width="100%" height="100%" alt="From a young age, “[music] was just something that made the thoughts in my brain shut off for once and I could be at peace,” Nieporte says."/>
+</div><!--end of slideshow-->
+<!--beginning of slideshow caption-->
+<div id="alt-caption" class="center">
+</div><!--end of slideshow caption-->
+<p class="tab"><a href="#tl">Navigation</a></p>
+</article><!--end of article-->
+</div><!--end of row-->
+<!--end of slideshow section-->
+	
+    
+<!--beginning of audio section-->
+<div class="row whiteBG">
+<h2 id="tl">What moments best describe your experience going to Shabang?</h2>
+<article>
+  <p class="tab">Click on images to hear college students in SLO talk about their experiences at Shabang.<br>(Double-click to pause audio)</p>
+  <div class="table">
+	<div id="trip">
+<audio id="audio_1">
+    <source src="audio/1.mp3" type="audio/mpeg" />
+</audio>        
+<audio id="audio_2">
+    <source src="audio/2.mp3" type="audio/mpeg" />
+</audio>        
+<audio id="audio_3">
+	<source src="audio/3.mp3" type="audio/mpeg" />
+</audio>
+        
+<img src="img/rollover/1.JPG" class="image2" alt="description" onMouseOver="this.src='img/rollover/1.gif'" onMouseOut="this.src='img/rollover/1.JPG'" onClick="document.getElementById('audio_1').play(); return false;" onDblClick="document.getElementById('audio_1').pause(); return false;">
+ /&gt; 
+            
+<img src="img/rollover/2.JPG" class="image2" alt="description" onMouseOver="this.src='img/rollover/2.gif'" onMouseOut="this.src='img/rollover/2.JPG'" onClick="document.getElementById('audio_2').play(); return false;" onDblClick="document.getElementById('audio_2').pause(); return false;">
+ /&gt;
+            
+<img src="img/rollover/3.JPG" class="image2" alt="description" onMouseOver="this.src='img/rollover/3.gif'" onMouseOut="this.src='img/rollover/3.JPG'" onClick="document.getElementById('audio_3').play(); return false;" onDblClick="document.getElementById('audio_3').pause(); return false;">
+/&gt;
+</div>
+</div>
+</article>
+</div>
+    
+<article>
+<p class="tab"><a href="#vid">Navigation</a></p>		
+</article>
+</div>
+<!--end of audio section-->
+    
+<!--beginning of parallax image-->
+<div class="parallax" data-parallax="scroll" data-bleed="10" data-speed="0.2" iosFix="true" data-image-src="img/parallax.jpg">
+  <div class="courtesy">
+    Photo: Aidan Dillon
+  </div>
+</div>
+<!--end of parallax image-->
+
+<!--beginning of video section-->
+<div class="row orangeBG">
+<h2 id="vid">KCPR: Amplifying Local Sounds in San Luis Obispo</h2>
+<article>
+<p class="tab">Explore how KCPR 91.3 FM amplifies the sounds of San Luis Obispo's local music scene. KCPR Podcast Director, Sam Kohn, speaks on how the station supports new talent and brings the community together through music.</p>	
+<video width="100%" height="100%" poster="img/poster.jpg" controls>
+<source src="img/video.mp4" type="video/mp4">
+Your browser does not support the video tag.
+</video>
+<p class="tab"><a href="#num">Navigation</a></p>
+</article>
+</div>
+<!--end of video section-->
+
+<!--beginning of infographic section-->
+<div class="row whiteBG">
+<h2 id="num">San Luis Obispo Local Beats</h2>
+<article>
+<p class="tab">Discover the best songs from the local music scene in San Luis Obispo. Here's a curated playlist featuring the top songs from the top ten local artists in SLO. Listen to the unique sounds and talents that define SLO's music scene.</p>
+<!--infographic embed code here-->
+    <iframe style="border-radius:12px" src="https://open.spotify.com/embed/playlist/4XwxTpv8jqRgewt27WmPEI?utm_source=generator&theme=0" width="100%" height="352" frameBorder="0" allowfullscreen="" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy"></iframe>
+</article>
+</div>
+<!--end of infographic section-->
+	
+<!--beginning of footer-->
+<footer>Slocal Music | San Luis Obispo, CA | <a href="mailto: email@email.com?Subject=Inquiry" target="_top">Send Email</a> | Copyright 2024 | Site by Paige Teraji 
+</footer>
+<!--end of footer-->
+    
+</body>
+	
+<!--the following script controls the responsive navigation-->
+<script>
+	(function($) { // Begin jQuery
+  $(function() { // DOM ready
+    // If a link has a dropdown, add sub menu toggle.
+    $('nav ul li a:not(:only-child)').click(function(e) {
+      $(this).siblings('.nav-dropdown').toggle();
+      // Close one dropdown when selecting another
+      $('.nav-dropdown').not($(this).siblings()).hide();
+      e.stopPropagation();
+    });
+    // Clicking away from dropdown will remove the dropdown class
+    $('html').click(function() {
+      $('.nav-dropdown').hide();
+    });
+    // Toggle open and close nav styles on click
+    $('#nav-toggle').click(function() {
+      $('nav ul').slideToggle();
+    });
+    // Hamburger to X toggle
+    $('#nav-toggle').on('click', function() {
+      this.classList.toggle('active');
+    });
+  }); // end DOM ready
+})(jQuery); // end jQuery
+	</script>
+	<script>
+	var headertext = [];
+var headers = document.querySelectorAll("#miyazaki th"),
+tablerows = document.querySelectorAll("#miyazaki th"),
+tablebody = document.querySelector("#miyazaki tbody");
+for(var i = 0; i < headers.length; i++) {
+	var current = headers[i];
+	headertext.push( current.textContent.replace( /\r?\n|\r/,"") );
+}
+for (var i = 0, row; row = tablebody.rows[i]; i++) {
+	for (var j = 0, col; col = row.cells[j]; j++) {
+		col.setAttribute("data-th", headertext[j]);
+	}
+}
+</script>
+	
+	<!----Prevents audio tracks from playing simultaneously---->
+<script>
+document.addEventListener('play', function(e){
+    var audios = document.getElementsByTagName('audio');
+    for(var i = 0, len = audios.length; i < len;i++){
+        if(audios[i] != e.target){
+            audios[i].pause();
+        }
+    }
+}, true);
+    </script>
+
+<!-- Script to add hyperlink behavior -->
+<script>
+    document.getElementById('olivia-link').addEventListener('click', function() {
+        window.open('https://www.instagram.com/olivia.nieporte/', '_blank');
+    });
+</script>
+</html>
